@@ -1,0 +1,7 @@
+1. membuat repository baru
+2. meletakkan folder file - file pada master (version 1.0)
+3. membuat branch untuk versioning (temp)
+4. meletakkan file - file baru pada branch temp
+5. melakukan pull request
+6. merge
+7. file - file pada master telah terupdate (version 1.1)
