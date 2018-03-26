@@ -9,6 +9,10 @@
 </head>
 <body>
 	<div data-role=page id=win1>
+		<div data-role="panel" id="mypanel" data-position="right" data-display="push">
+			<p>this calculator is copied from some website on the internet! isnt that cool? you can check the website <a href="https://codepen.io/simonja2/pen/QbGYbR">here</a></p>
+		</div>
+
 		<div data-role=header>
 			<h1>Page 1</h1>
 		</div>
@@ -17,7 +21,7 @@
 				<div class="ui-field-contain">
 					    <label for="select-native-1">Page:</label>
 					    <select id="changePage" onchange="location=this.value">
-						        <option value="#win1">Page 1</option>
+						        <option value="#win1" selected="true">Page 1</option>
 						        <option value="#win2">Page 2</option>
 						        <option value="#win3">Page 3</option>
 						        
@@ -51,20 +55,24 @@
 					<div class="button zero">0</div><div class="button decimal">.</div><div class="button">+</div><div class="button equal">=</div>
 				</div>
 			</div>
+
+
+			<a href="#mypanel" data-role=button>Open panel</a>
 		</div>
 	</div>
 
-	<div data-role=page id=win2>
+	<div data-role=page id=win2 onload="myFunction()">
 		<div data-role=header>
 			<h1>Page 2</h1>
 		</div>
-		<div data-role=content>
+		<div id="loader"></div>
+		<div data-role=content style="display: none" class="animate-bottom" id="showLoader">
 			<form>
 				<div class="ui-field-contain">
 					    <label for="select-native-1">Page:</label>
 					    <select id="changePage" onchange="location=this.value">
 						        <option value="#win1">Page 1</option>
-						        <option value="#win2">Page 2</option>
+						        <option value="#win2" selected="true">Page 2</option>
 						        <option value="#win3">Page 3</option>
 						        
 					    </select>
@@ -79,8 +87,23 @@
 				function changeColor(){
 					document.getElementById("ch").style.backgroundColor = document.getElementById("col").value
 				}
+
+				var myVar;
+
+				function myFunction() {
+					myVar = setTimeout(showPage, 3000);
+				}
+
+				function showPage() {
+					document.getElementById("loader").style.display = "none";
+					document.getElementById("showLoader").style.display = "block";
+				}
 			</script>
 		</div>
+
+		<script>
+
+		</script>
 	</div>
 
 	<div data-role=page id=win3>
@@ -94,11 +117,18 @@
 					   <select id="changePage" onchange="location=this.value">
 						        <option value="#win1">Page 1</option>
 						        <option value="#win2">Page 2</option>
-						        <option value="#win3">Page 3</option>
+						        <option value="#win3" selected="true">Page 3</option>
 						        
 					    </select>
 				</div>
 			</form>
+			<p>Hal - hal yang sudah dipelajar di kelas :</p>
+			<ul data-role="listview">
+				    <li>GitHub</li>
+				    <li>JQuery Mobile</li>
+				    <li>AngularJS</li>
+			</ul>
+
 		</div>
 	</div>
 </body>

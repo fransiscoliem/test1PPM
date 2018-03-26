@@ -9860,4 +9860,4 @@ operate = function(a, b, operation) {
   if (operation === '/') return a / b;
 }
 
-$("ch").css({"background-color": "red"});
+
